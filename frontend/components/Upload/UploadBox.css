@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* --- Parent Segment Frame --- */
+.upload-section {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- Dynamic Drag & Drop Dropzone Box --- */
+.upload-box {
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.01);
+}
+
+.upload-box:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+.upload-box.dragging {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  transform: scale(1.01);
+}
+
+.upload-box.has-file {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+/* --- Central Brand Icon Layout + Pulse Ring --- */
+.upload-icon-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon {
+  font-size: 1.75rem;
+  z-index: 2;
+  transition: transform 0.25s ease;
+}
+
+.upload-box:hover .upload-icon {
+  transform: translateY(-2px);
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.upload-box.dragging .pulse-ring {
+  background-color: #dbeafe;
+  transform: scale(1.2);
+}
+
+.upload-box.has-file .pulse-ring {
+  background-color: #d1fae5;
+}
+
+/* Typography elements */
+.upload-box h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.upload-box p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.upload-box p span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* --- Active Loaded Entity Card Panel --- */
+.selected-file-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+  animation: cardAttachSlide 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.file-icon {
+  font-size: 1.5rem;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-info h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #10b981;
+  margin: 0 0 0.15rem 0;
+}
+
+.file-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.success-badge {
+  background: #10b981;
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  font-size: 0.85rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* --- Primary Trigger Action Button --- */
+.upload-btn {
+  font-family: 'Outfit', sans-serif;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: #1e293b;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.15);
+}
+
+.upload-btn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+.upload-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Internal Loading Animation Rules inside Button */
+.loader-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: innerSpinBtn 0.8s linear infinite;
+}
+
+/* --- Modern Interactive Scroll Indicator Gesture --- */
+.scroll-gesture-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  align-self: center;
+  animation: hintFadeIn 0.5s ease-out forwards;
+}
+
+.scroll-gesture-hint p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.scroll-gesture-hint:hover p {
+  color: #3b82f6;
+}
+
+.mouse-wheel-icon {
+  width: 20px;
+  height: 32px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  position: relative;
+  display: block;
+  transition: border-color 0.2s ease;
+}
+
+.scroll-gesture-hint:hover .mouse-wheel-icon {
+  border-color: #3b82f6;
+}
+
+.wheel-dot {
+  width: 4px;
+  height: 8px;
+  background-color: #64748b;
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+  animation: mouseScrollTrack 1.6s infinite ease-in-out;
+}
+
+.scroll-gesture-hint:hover .wheel-dot {
+  background-color: #3b82f6;
+}
+
+/* --- Core Keyframe Sequences --- */
+@keyframes cardAttachSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes innerSpinBtn {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hintFadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mouseScrollTrack {
+  0% { opacity: 0; transform: translate(-50__, 0); }
+  40% { opacity: 1; }
+  80% { opacity: 0; transform: translate(-50__, 10px); }
+  100% { opacity: 0; }
+}
