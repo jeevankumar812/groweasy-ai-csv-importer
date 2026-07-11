@@ -299,7 +299,7 @@ https://github.com/jeevankumar812
 
 LinkedIn
 
-(Add your LinkedIn URL here)
+https://www.linkedin.com/in/k-jeevan-kumar-5b540b266/
 
 ---
 
