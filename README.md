@@ -22,6 +22,31 @@ https://github.com/jeevankumar812/groweasy-ai-csv-importer
 
 ---
 
+
+# 👨‍💻 About the Developer
+
+Hi, I'm **K Jeevan Kumar**, a **2026 B.E. graduate** from **Alva's Institute of Engineering & Technology (AIET), Karnataka**.
+
+I am a passionate **Full Stack MERN Developer** with a strong interest in **Backend Development, Artificial Intelligence, REST APIs, System Design, and Database Management**. I enjoy solving real-world problems by building scalable web applications and continuously improving my software engineering skills.
+
+This GrowEasy AI CSV Importer project demonstrates my ability to design and develop a complete full-stack application—from building a responsive frontend with Next.js to implementing a robust Node.js backend, integrating AI-powered data processing, using MongoDB Atlas for cloud data storage, containerizing the application with Docker, and deploying it to production.
+
+---
+
+## 👤 Personal Details
+
+**Name:** K Jeevan Kumar
+
+**Education:** Bachelor of Engineering (B.E.)
+
+**College:** Alva's Institute of Engineering & Technology (AIET)
+
+**Graduation Year:** 2026
+
+**Role:** Full Stack MERN Developer
+
+---
+
 # ✨ Features
 
 - Upload CSV files
