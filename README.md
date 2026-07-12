@@ -1,4 +1,4 @@
-# 🚀 GrowEasy AI CSV Importer
+#  GrowEasy AI CSV Importer
 
 An AI-powered CRM CSV Importer built with **Next.js, Node.js, Express.js, MongoDB Atlas, and Groq AI**.
 
